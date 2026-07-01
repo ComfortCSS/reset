@@ -1,0 +1,81 @@
+/**
+ * @package reset
+ * @subpackage Core
+ * @since 0.1.0
+ *
+ * @section media
+ * @description
+ *   Resets media elements to a clean, predictable state. Different element
+ *   types have different default behaviors, so we apply targeted resets
+ *   rather than a one‑size‑fits‑all approach.
+ *
+ * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img
+ * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video
+ * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe
+ * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio
+ */
+
+@layer reset {
+    /**
+     * Images, pictures, canvases, and SVGs.
+     *
+     * - `display: block` removes extra whitespace below the element.
+     * - `max-width: 100%` prevents overflow while allowing scaling.
+     * - `height: auto` preserves the aspect ratio when width is changed.
+     * - `vertical-align: middle` is redundant with `display: block`, but kept
+     *   for safety in case the element is accidentally set to inline.
+     */
+    img,
+    picture,
+    canvas,
+    svg {
+        display: block;
+        max-width: 100%;
+        height: auto;
+        vertical-align: middle;
+    }
+
+    /**
+     * Video elements.
+     *
+     * - Same as images, but videos often have intrinsic dimensions; this ensures
+     *   they behave responsively.
+     */
+    video {
+        display: block;
+        max-width: 100%;
+        height: auto;
+    }
+
+    /**
+     * Iframes, embeds, and objects.
+     *
+     * - These elements typically have fixed widths/heights (often set via
+     *   attributes or external content). We do NOT set `height: auto` because
+     *   that would distort their content.
+     * - `display: block` ensures they start on a new line and don't create
+     *   extra space below.
+     * - `border: 0` removes the default border that some browsers add.
+     * - `overflow: hidden` prevents scrollbars when content overflows (e.g.,
+     *   in some embedded PDFs).
+     */
+    iframe,
+    embed,
+    object {
+        display: block;
+        max-width: 100%;
+        border: 0;
+        overflow: hidden;
+    }
+
+    /**
+     * Audio elements.
+     *
+     * - Audio is usually an inline‑block element that should sit within text.
+     *   We do not force `display: block` to avoid breaking layouts.
+     * - Only ensure it doesn't overflow its container.
+     */
+    audio {
+        max-width: 100%;
+    }
+}
