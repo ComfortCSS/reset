@@ -1,0 +1,86 @@
+/**
+ * @package Reset
+ * @subpackage Core
+ * @since 0.1.0
+ *
+ * @section base
+ * @description
+ *   Fundamental reset rules that apply to all elements and establish the box model,
+ *   scroll behavior, and basic body defaults. No visual styles are imposed.
+ *
+ * @see https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing
+ * @see https://developer.mozilla.org/en-US/docs/Web/CSS/color-scheme
+ */
+@layer reset {
+    /**
+     * Universal selector reset for all elements and pseudo-elements.
+     *
+     * - `box-sizing: border-box` ensures padding and border are included in element
+     *   dimensions, simplifying layout calculations.
+     * - `margin: 0` and `padding: 0` remove all default spacing.
+     *
+     * @note This rule has zero specificity due to the universal selector,
+     *       allowing easy overrides.
+     */
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    /**
+     * Root element configuration.
+     *
+     * - `color-scheme: light dark` enables built-in OS theme awareness for form
+     *   controls and scrollbars, without imposing any specific design.
+     *
+     * @see https://developer.mozilla.org/en-US/docs/Web/CSS/color-scheme
+     */
+    :root {
+        color-scheme: light dark;
+    }
+
+    /**
+     * HTML base settings.
+     *
+     * - `-webkit-text-size-adjust: 100%` prevents font scaling in iOS Safari.
+     * - `tab-size: 4` sets the displayed width of a tab character.
+     * - `scroll-behavior: smooth` enables native smooth scrolling (respecting
+     *   `prefers-reduced-motion` via overrides later).
+     * - `-ms-overflow-style: scrollbar` ensures scrollbars appear in older IE/Edge.
+     *
+     * @see https://developer.mozilla.org/en-US/docs/Web/CSS/tab-size
+     * @see https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-behavior
+     */
+    html {
+        -webkit-text-size-adjust: 100%;
+        -moz-tab-size: 4;
+        tab-size: 4;
+        scroll-behavior: smooth;
+        -ms-overflow-style: scrollbar;
+    }
+
+    /**
+     * Body defaults.
+     *
+     * - Uses the system‑UI font stack for optimal performance and native feel.
+     * - `line-height: 1.5` provides comfortable readability.
+     * - `background-color: Canvas` and `color: CanvasText` use the system’s
+     *   default background and text colors, automatically adapting to light/dark
+     *   mode without forcing a particular theme.
+     * - Text rendering is optimized for legibility.
+     *
+     * @note These values can be overridden in the project’s own styles.
+     * @see https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#system_colors
+     */
+    body {
+        font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', sans-serif;
+        line-height: 1.5;
+        background-color: Canvas;
+        color: CanvasText;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}
