@@ -1,0 +1,83 @@
+/**
+ * @package reset
+ * @subpackage Core
+ * @since 0.1.0
+ *
+ * @section interactive
+ * @description
+ *   Resets interactive elements like links, focus states, and elements with
+ *   special attributes (hidden, disabled, contenteditable, draggable) to a
+ *   neutral but accessible baseline.
+ *
+ * @see https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible
+ */
+
+@layer reset {
+    /**
+     * Links.
+     *
+     * - Inherit color from parent to avoid default blue.
+     * - Remove underline by default; it can be re‑added for hover/active.
+     */
+    a, a:link, a:visited {
+        color: inherit;
+        text-decoration: none;
+    }
+    /* Hover and active are left for project-specific styling */
+    /* a:hover, a:active { } */
+
+    /**
+     * Focus management.
+     *
+     * - `:focus:not(:focus-visible)` hides the outline when the focus is not
+     *   keyboard‑driven (e.g., mouse click), improving aesthetics.
+     * - `:focus-visible` uses the system’s `Highlight` color for a visible
+     *   indicator when keyboard navigation is used.
+     *
+     * @see https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible
+     */
+    :focus:not(:focus-visible) {
+        outline: none;
+    }
+    :focus-visible {
+        outline: 2px solid Highlight;
+        outline-offset: 2px;
+    }
+
+    /**
+     * `hidden` attribute.
+     *
+     * - Forcefully hide elements with `display: none`.
+     */
+    [hidden] {
+        display: none !important;
+    }
+
+    /**
+     * Disabled elements.
+     *
+     * - Dim the opacity and change cursor to default to indicate non‑interactivity.
+     */
+    :disabled {
+        cursor: default;
+        opacity: 0.5;
+    }
+
+    /**
+     * Content‑editable elements.
+     *
+     * - Remove the default focus outline to let the project control the style.
+     */
+    [contenteditable] {
+        outline: none;
+    }
+
+    /**
+     * Draggable elements.
+     *
+     * - Disable text selection during drag operations for a cleaner experience.
+     */
+    [draggable] {
+        user-select: none;
+    }
+}
