@@ -8,7 +8,7 @@
     "src"
   ],
   "scripts": {
-    "build": "npx lightningcss --minify --bundle --targets \">= 0.25%\" src/index.css -o dist/reset.min.css"
+    "build": "npx lightningcss --minify --bundle src/index.css -o dist/reset.min.css"
   },
   "keywords": [
     "css",
