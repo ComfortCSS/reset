@@ -14,7 +14,7 @@ Alternatively, download the files manually from the repository.
 
 At the very beginning of the CSS file:
 ```css
-@import 'comfort-css-reset/dist/comfort-css-reset.min.css';
+@import 'comfort-css-reset/dist/reset.min.css';
 ```
 For example, just the basic reset and forms:
 ```css

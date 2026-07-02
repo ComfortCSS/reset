@@ -1,14 +1,14 @@
 {
   "name": "comfort-css-reset",
   "version": "1.0.0",
-  "main": "dist/comfort-css-reset.min.css",
-  "style": "dist/comfort-css-reset.min.css",
+  "main": "dist/reset.min.css",
+  "style": "dist/reset.min.css",
   "files": [
     "dist",
     "src"
   ],
   "scripts": {
-    "build": "npx lightningcss --minify --bundle src/index.css -o dist/comfort-css-reset.min.css"
+    "build": "npx lightningcss --minify --bundle src/index.css -o dist/reset.min.css"
   },
   "keywords": [
     "css",
