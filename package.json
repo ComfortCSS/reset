@@ -7,8 +7,14 @@
     "dist",
     "src"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/comfortcss/reset.git"
+  },
   "scripts": {
-    "build": "npx lightningcss --minify --bundle src/index.css -o dist/reset.min.css"
+    "build": "npx lightningcss --minify --bundle src/index.css -o dist/reset.min.css",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run build"
   },
   "keywords": [
     "css",
@@ -23,5 +29,23 @@
   "devDependencies": {
     "lightningcss": "^1.32.0",
     "lightningcss-cli": "^1.32.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": {
+    ".": {
+      "default": "./dist/reset.min.css"
+    },
+    "./modules": {
+      "default": "./src/"
+    },
+    "./reset": {
+      "default": "./dist/reset.min.css"
+    },
+    "./dist/reset.min.css": {
+      "default": "./dist/reset.min.css"
+    },
+    "./package.json": "./package.json"
   }
 }
