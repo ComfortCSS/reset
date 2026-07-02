@@ -18,8 +18,9 @@ At the very beginning of the CSS file:
 ```
 For example, just the basic reset and forms:
 ```css
-@import '@comfortcss/reset/modules/base.css';
-@import '@comfortcss/reset/modules/forms.css';
+@import "@comfortcss/reset";
+@import "@comfortcss/reset/reset";
+@import "@comfortcss/reset/modules/core/base.css";
 ```
 
 ## Modules
