@@ -1,0 +1,21 @@
+/**
+ * @package reset
+ * @version 1.0.0
+ * @author ComfortCSS
+ * @license MIT
+ *
+ * @description
+ *   Master import file for `reset`. It brings together all modular parts
+ *   in a logical order. The entire reset is wrapped in the `reset` cascade layer.
+ *
+ * @see https://developer.mozilla.org/en-US/docs/Web/CSS/@layer
+ */
+
+/* Import all core modules */
+@import 'core/base.css';
+@import 'core/typography.css';
+@import 'core/forms.css';
+@import 'core/tables.css';
+@import 'core/media.css';
+@import 'core/interactive.css';
+@import 'core/accessibility.css';

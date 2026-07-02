@@ -1,0 +1,131 @@
+/**
+ * @package reset
+ * @subpackage Core
+ * @since 1.0.0
+ * @license MIT
+ *
+ * @section forms
+ * @description
+ *   Completely resets form controls to a bare-bones state, removing default
+ *   borders, backgrounds, paddings, and appearance. Only essential interaction
+ *   cues (like `cursor: pointer` for buttons) are kept.
+ *
+ * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input
+ */
+@layer reset {
+    /**
+     * All form controls.
+     *
+     * - Inherit font and color from the parent, so they blend with the page.
+     * - Remove all margins, paddings, backgrounds, borders, and outlines.
+     * - `appearance: none` removes platform‑specific styling (e.g., gradients,
+     *   rounded corners) for consistency across browsers.
+     * - Special handling is added for controls that need native appearance.
+     */
+    input, button, textarea, select,
+    optgroup, option, datalist, fieldset, legend {
+        font: inherit;
+        color: inherit;
+        margin: 0;
+        padding: 0;
+        background: none;
+        border: none;
+        border-radius: 0;
+        outline: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+    }
+
+    /**
+     * Controls that should retain native behavior for usability.
+     *
+     * - Checkboxes, radio buttons, range sliders, and color pickers are left
+     *   with their default appearance because overriding them can break
+     *   accessibility and user experience.
+     */
+    input[type="checkbox"],
+    input[type="radio"],
+    input[type="range"],
+    input[type="color"] {
+        appearance: auto;
+        -webkit-appearance: auto;
+        width: auto;
+        height: auto;
+        margin: 0.25rem;
+    }
+
+    /**
+     * Range input – horizontal slider.
+     */
+    input[type="range"] {
+        -webkit-appearance: slider-horizontal;
+        appearance: auto;
+        background: transparent;
+    }
+
+    /**
+     * Color picker.
+     */
+    input[type="color"] {
+        -webkit-appearance: color-well;
+        appearance: auto;
+        padding: 0;
+        width: 2rem;
+        height: 2rem;
+        border: none;
+    }
+
+    /**
+     * Buttons.
+     *
+     * - `cursor: pointer` indicates interactivity.
+     * - Firefox’s inner focus ring is removed to maintain consistency.
+     */
+    button {
+        cursor: pointer;
+    }
+    button::-moz-focus-inner {
+        border: 0;
+        padding: 0;
+    }
+
+    /**
+     * Text areas.
+     *
+     * - Allow vertical resizing for user convenience.
+     * - `overflow: auto` ensures scrollbars appear when needed.
+     * - `vertical-align: top` prevents extra space below.
+     */
+    textarea {
+        resize: vertical;
+        overflow: auto;
+        vertical-align: top;
+    }
+
+    /**
+     * Placeholder text.
+     *
+     * - Inherit the parent color but reduce opacity for a subtle hint.
+     */
+    input::placeholder,
+    textarea::placeholder {
+        color: inherit;
+        opacity: 0.5;
+    }
+
+    /**
+     * Select dropdowns.
+     *
+     * - Remove the default arrow in all browsers to allow custom styling.
+     * - The arrow can be re-added via `background-image` if needed.
+     */
+    select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+    }
+    select::-ms-expand {
+        display: none;
+    }
+}

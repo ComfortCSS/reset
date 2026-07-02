@@ -1,0 +1,12 @@
+/**
+ * @package reset
+ * @version 1.0.0
+ * @author ComfortCSS
+ * @license MIT
+ *
+ * @description
+ *   Entry point for the `reset` package. This file imports the main reset.
+ *   Users can either import this file directly or import individual modules.
+ */
+
+@import 'reset.css';

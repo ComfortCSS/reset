@@ -1,0 +1,98 @@
+/**
+ * @package reset
+ * @subpackage Core
+ * @since 1.0.0
+ * @license MIT
+ *
+ * @section typography
+ * @description
+ *   Resets all text-related elements to a neutral state, removing margins,
+ *   paddings, and decorative styles. Lists, quotes, code blocks, and
+ *   horizontal rules are stripped of browser defaults.
+ *
+ * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Element
+ */
+
+@layer reset {
+    /**
+     * Headings, paragraphs, and block containers.
+     *
+     * - `margin: 0` and `padding: 0` remove all spacing.
+     * - No font-weight or font-size is set here—these are left for the project.
+     */
+    h1, h2, h3, h4, h5, h6,
+    p, blockquote, figure, figcaption,
+    dl, dd, dt, pre, address, hr {
+        margin: 0;
+        padding: 0;
+    }
+
+    /**
+     * Lists.
+     *
+     * - `list-style: none` removes bullets and numbering.
+     * - Padding and margin are already reset via the universal selector.
+     */
+    ul, ol, menu, dir {
+        list-style: none;
+    }
+
+    /**
+     * Blockquotes and inline quotes.
+     *
+     * - `quotes: none` removes the default quotation marks.
+     * - Pseudo-elements are emptied to avoid any generated content.
+     */
+    blockquote, q {
+        quotes: none;
+    }
+    blockquote::before,
+    blockquote::after,
+    q::before,
+    q::after {
+        content: '';
+    }
+
+    /**
+     * Code and monospaced elements.
+     *
+     * - Use a consistent monospace font stack with common fallbacks.
+     * - `font-size: 1em` ensures they inherit the parent’s size.
+     * - `pre` is set to wrap text and allow horizontal scrolling if needed.
+     */
+    code, kbd, pre, samp, var, output {
+        font-family: 'SF Mono', 'Fira Code', 'Consolas', 'Liberation Mono', monospace;
+        font-size: 1em;
+    }
+    pre {
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        overflow-x: auto;
+    }
+
+    /**
+     * Horizontal rule.
+     *
+     * - Removes border and uses a thin top border with the current text color,
+     *   making it inherit the theme. The opacity softens it.
+     */
+    hr {
+        border: 0;
+        border-top: 1px solid currentColor;
+        opacity: 0.25;
+    }
+
+    /**
+     * Inline text semantics.
+     *
+     * - Reset all decorative and stylistic properties to inherit from parent.
+     *   This prevents unwanted bolding, italic, underlining, etc., so that
+     *   styling can be fully controlled by the project.
+     */
+    b, strong, i, em, small, mark, sub, sup, ins, del, s, u,
+    abbr, ruby, rt, rp, bdi, bdo, wbr {
+        font-style: normal;
+        font-weight: inherit;
+        text-decoration: none;
+    }
+}

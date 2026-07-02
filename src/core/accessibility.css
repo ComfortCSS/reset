@@ -1,0 +1,62 @@
+/**
+ * @package reset
+ * @subpackage Core
+ * @since 1.0.0
+ * @license MIT
+ *
+ * @section accessibility
+ * @description
+ *   Handles user preferences and system‑level accessibility settings, such as
+ *   reduced motion, color scheme, and contrast adaptation.
+ *
+ * @see https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion
+ * @see https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme
+ * @see https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-contrast
+ * @see https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#system_colors
+ */
+ @layer reset {
+    /**
+     * Reduced motion.
+     *
+     * - When the user has requested reduced animation, all animations and
+     *   transitions are effectively disabled by setting their duration to an
+     *   extremely small value and forcing `scroll-behavior: auto`.
+     * - Uses `!important` to override any project styles for accessibility.
+     */
+    @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+            scroll-behavior: auto !important;
+        }
+    }
+
+    /**
+     * System color custom properties.
+     *
+     * - Registers `--color-canvas`, `--color-canvas-text`, and `--color-highlight`
+     *   so they can be used in other parts of the project and can be animated if
+     *   needed (because they are defined with `@property`).
+     * - These properties default to the CSS system color keywords.
+     *
+     * @see https://developer.mozilla.org/en-US/docs/Web/CSS/@property
+     */
+    @property --color-canvas {
+        syntax: '<color>';
+        inherits: true;
+        initial-value: Canvas;
+    }
+    @property --color-canvas-text {
+        syntax: '<color>';
+        inherits: true;
+        initial-value: CanvasText;
+    }
+    @property --color-highlight {
+        syntax: '<color>';
+        inherits: true;
+        initial-value: Highlight;
+    }
+}

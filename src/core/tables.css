@@ -1,0 +1,59 @@
+/**
+ * @package reset
+ * @subpackage Core
+ * @since 1.0.0
+ * @license MIT
+ *
+ * @section tables
+ * @description
+ *   Resets table layout to a clean slate. Collapses borders, removes default
+ *   spacing, and sets alignment to a consistent baseline.
+ *
+ * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table
+ */
+@layer reset {
+    /**
+     * Table element.
+     *
+     * - `border-collapse: collapse` merges adjacent borders.
+     * - `border-spacing: 0` removes any default cell spacing.
+     * - `width: 100%` makes the table fill its container by default.
+     * - `caption-side: bottom` places the caption below the table (common style).
+     */
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: 100%;
+        caption-side: bottom;
+    }
+
+    /**
+     * Table cells.
+     *
+     * - No padding by default (override as needed).
+     * - Left alignment and top vertical alignment are typical for data tables.
+     */
+    th, td {
+        padding: 0;
+        text-align: left;
+        vertical-align: top;
+    }
+
+    /**
+     * Table header cell.
+     *
+     * - Inherit font weight so it can be customized per project.
+     */
+    th {
+        font-weight: inherit;
+    }
+
+    /**
+     * Table caption.
+     *
+     * - Align left to match the table’s text direction.
+     */
+    caption {
+        text-align: left;
+    }
+}
