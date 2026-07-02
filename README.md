@@ -5,7 +5,7 @@ A modern CSS reset for web projects.
 ## Installation
 
 ```bash
-npm install comfortcss/reset:1.0.0
+npm install comfortcss/reset:1.X.X
 ```
 
 Alternatively, download the files manually from the repository.
