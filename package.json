@@ -9,7 +9,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/comfortcss/reset.git"
+    "url": "git+https://github.com/ComfortCSS/reset.git"
   },
   "scripts": {
     "build": "npx lightningcss --minify --bundle src/index.css -o dist/reset.min.css",
@@ -35,17 +35,14 @@
   },
   "exports": {
     ".": {
+      "style": "./dist/reset.min.css",
       "default": "./dist/reset.min.css"
-    },
-    "./modules": {
-      "default": "./src/"
     },
     "./reset": {
+      "style": "./dist/reset.min.css",
       "default": "./dist/reset.min.css"
     },
-    "./dist/reset.min.css": {
-      "default": "./dist/reset.min.css"
-    },
+    "./modules/*": "./src/*",
     "./package.json": "./package.json"
   }
 }
