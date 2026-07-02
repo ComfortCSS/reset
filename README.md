@@ -5,7 +5,7 @@ A modern CSS reset for web projects.
 ## Installation
 
 ```bash
-npm install comfort-css-reset
+npm install comfortcss/reset:1.X.X
 ```
 
 Alternatively, download the files manually from the repository.
@@ -14,12 +14,13 @@ Alternatively, download the files manually from the repository.
 
 At the very beginning of the CSS file:
 ```css
-@import 'comfort-css-reset/dist/comfort-css-reset.min.css';
+@import '@comfortcss/reset/dist/reset.min.css';
 ```
 For example, just the basic reset and forms:
 ```css
-@import 'comfort-css-reset/src/core/base.css';
-@import 'comfort-css-reset/src/core/forms.css';
+@import "@comfortcss/reset";
+@import "@comfortcss/reset/reset";
+@import "@comfortcss/reset/modules/core/base.css";
 ```
 
 ## Modules
