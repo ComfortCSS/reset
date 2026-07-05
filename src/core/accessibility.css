@@ -1,7 +1,7 @@
 /**
  * @package reset
- * @subpackage Core
- * @since 1.0.1
+ * @subpackage accessibility
+ * @since 1.1.0
  * @license MIT
  *
  * @section accessibility
@@ -33,6 +33,23 @@
             scroll-behavior: auto !important;
         }
     }
+
+    @media (prefers-contrast: high) {
+        body {
+            background-color: Canvas;
+            color: CanvasText;
+        }
+        * {
+            border-color: currentColor !important;
+        }
+    }
+
+    @media (prefers-reduced-data: reduce) {
+        * {
+            background-image: none !important;
+        }
+    }
+
 
     /**
      * System color custom properties.

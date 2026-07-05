@@ -1,7 +1,7 @@
 /**
  * @package reset
- * @subpackage Core
- * @since 1.0.1
+ * @subpackage forms
+ * @since 1.1.0
  * @license MIT
  *
  * @section forms
@@ -127,5 +127,16 @@
     }
     select::-ms-expand {
         display: none;
+    }
+
+    /* Fieldset и legend */
+    fieldset {
+        border: none;
+        padding: 0;
+        margin: 0;
+    }
+    legend {
+        padding: 0;
+        display: block;
     }
 }
