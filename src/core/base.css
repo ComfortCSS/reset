@@ -1,7 +1,7 @@
 /**
  * @package Reset
- * @subpackage Core
- * @since 1.0.1
+ * @subpackage base
+ * @since 1.1.0
  * @license MIT
  *
  * @section base
@@ -41,6 +41,7 @@
      */
     :root {
         color-scheme: light dark;
+        accent-color: currentColor;
     }
 
     /**
@@ -60,6 +61,7 @@
         -moz-tab-size: 4;
         tab-size: 4;
         scroll-behavior: smooth;
+        scrollbar-gutter: stable;
         -ms-overflow-style: scrollbar;
     }
 
@@ -83,5 +85,6 @@
         color: CanvasText;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
+        -webkit-tap-highlight-color: transparent;
     }
 }

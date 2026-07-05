@@ -1,7 +1,7 @@
 /**
  * @package reset
- * @subpackage Core
- * @since 1.0.1
+ * @subpackage typography
+ * @since 1.1.0
  * @license MIT
  *
  * @section typography
@@ -25,6 +25,10 @@
     dl, dd, dt, pre, address, hr {
         margin: 0;
         padding: 0;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        text-wrap: balance;
     }
 
     /**
@@ -63,6 +67,7 @@
     code, kbd, pre, samp, var, output {
         font-family: 'SF Mono', 'Fira Code', 'Consolas', 'Liberation Mono', monospace;
         font-size: 1em;
+        tab-size: 2;
     }
     pre {
         white-space: pre-wrap;

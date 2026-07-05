@@ -1,7 +1,7 @@
 /**
  * @package reset
- * @subpackage Core
- * @since 1.0.1
+ * @subpackage interactive
+ * @since 1.1.0
  * @license MIT
  *
  * @section interactive
@@ -43,6 +43,12 @@
     :focus-visible {
         outline: 2px solid Highlight;
         outline-offset: 2px;
+    }
+
+    @supports not (outline-color: Highlight) {
+        :focus-visible {
+            outline-color: currentColor;
+        }
     }
 
     /**

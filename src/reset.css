@@ -1,6 +1,6 @@
 /**
  * @package reset
- * @version 1.0.1
+ * @version 1.1.0
  * @author ComfortCSS
  * @license MIT
  *
@@ -19,3 +19,4 @@
 @import 'core/media.css';
 @import 'core/interactive.css';
 @import 'core/accessibility.css';
+@import 'core/elements.css';
