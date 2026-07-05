@@ -1,7 +1,7 @@
 /**
  * @package reset
- * @subpackage Core
- * @since 1.0.1
+ * @subpackage media
+ * @since 1.1.0
  * @license MIT
  *
  * @section media
@@ -33,7 +33,6 @@
         display: block;
         max-width: 100%;
         height: auto;
-        vertical-align: middle;
     }
 
     /**
