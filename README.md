@@ -1,4 +1,4 @@
-# ComfortCSS Reset
+# @comfortcss/reset
 
 [![npm version](https://img.shields.io/npm/v/@comfortcss/reset.svg?style=flat-square)](https://www.npmjs.com/package/@comfortcss/reset)
 
