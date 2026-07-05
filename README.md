@@ -1,11 +1,13 @@
 # ComfortCSS Reset
 
+[![npm version](https://img.shields.io/npm/v/@comfortcss/reset.svg?style=flat-square)](https://www.npmjs.com/package/@comfortcss/reset)
+
 A modern CSS reset for web projects.
 
 ## Installation
 
 ```bash
-npm install comfortcss/reset:1.X.X
+npm install comfortcss/reset@1.x.x
 ```
 
 Alternatively, download the files manually from the repository.
@@ -14,13 +16,12 @@ Alternatively, download the files manually from the repository.
 
 At the very beginning of the CSS file:
 ```css
-@import '@comfortcss/reset/dist/reset.min.css';
+@import '~@comfortcss/reset';
 ```
 For example, just the basic reset and forms:
 ```css
-@import "@comfortcss/reset";
-@import "@comfortcss/reset/reset";
-@import "@comfortcss/reset/modules/core/base.css";
+@import "~@comfortcss/reset/reset";
+@import "~@comfortcss/reset/modules/core/base.css";
 ```
 
 ## Modules
