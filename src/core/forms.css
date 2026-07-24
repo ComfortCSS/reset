@@ -22,19 +22,26 @@
      *   rounded corners) for consistency across browsers.
      * - Special handling is added for controls that need native appearance.
      */
-    input, button, textarea, select,
-    optgroup, option, datalist, fieldset, legend {
-        font: inherit;
-        color: inherit;
-        margin: 0;
-        padding: 0;
+    input,
+    button,
+    textarea,
+    select,
+    optgroup,
+    option,
+    datalist,
+    fieldset,
+    legend {
+        appearance: none;
+        appearance: none;
+        appearance: none;
         background: none;
         border: none;
         border-radius: 0;
+        color: inherit;
+        font: inherit;
+        margin: 0;
         outline: none;
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
+        padding: 0;
     }
 
     /**
@@ -44,22 +51,24 @@
      *   with their default appearance because overriding them can break
      *   accessibility and user experience.
      */
-    input[type="checkbox"],
-    input[type="radio"],
-    input[type="range"],
-    input[type="color"] {
+    input[type='checkbox'],
+    input[type='radio'],
+    input[type='range'],
+    input[type='color'] {
+        /* stylelint-disable-next-line declaration-property-value-no-unknown */
         appearance: auto;
-        -webkit-appearance: auto;
-        width: auto;
+        appearance: auto;
         height: auto;
         margin: 0.25rem;
+        width: auto;
     }
 
     /**
      * Range input – horizontal slider.
      */
-    input[type="range"] {
-        -webkit-appearance: slider-horizontal;
+    input[type='range'] {
+        /* stylelint-disable-next-line declaration-property-value-no-unknown */
+        appearance: slider-horizontal;
         appearance: auto;
         background: transparent;
     }
@@ -67,13 +76,14 @@
     /**
      * Color picker.
      */
-    input[type="color"] {
-        -webkit-appearance: color-well;
+    input[type='color'] {
+        /* stylelint-disable-next-line declaration-property-value-no-unknown */
+        appearance: color-well;
         appearance: auto;
+        border: none;
+        height: 2rem;
         padding: 0;
         width: 2rem;
-        height: 2rem;
-        border: none;
     }
 
     /**
@@ -85,6 +95,7 @@
     button {
         cursor: pointer;
     }
+
     button::-moz-focus-inner {
         border: 0;
         padding: 0;
@@ -98,8 +109,8 @@
      * - `vertical-align: top` prevents extra space below.
      */
     textarea {
-        resize: vertical;
         overflow: auto;
+        resize: vertical;
         vertical-align: top;
     }
 
@@ -121,10 +132,11 @@
      * - The arrow can be re-added via `background-image` if needed.
      */
     select {
-        -webkit-appearance: none;
-        -moz-appearance: none;
+        appearance: none;
+        appearance: none;
         appearance: none;
     }
+
     select::-ms-expand {
         display: none;
     }
@@ -132,11 +144,12 @@
     /* Fieldset и legend */
     fieldset {
         border: none;
-        padding: 0;
         margin: 0;
-    }
-    legend {
         padding: 0;
+    }
+
+    legend {
         display: block;
+        padding: 0;
     }
 }

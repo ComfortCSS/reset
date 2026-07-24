@@ -1,59 +1,73 @@
 {
-  "name": "@comfortcss/reset",
-  "version": "1.1.1",
-  "description": "An accessible and lightweight CSS reset for web development.",
-  "main": "dist/reset.min.css",
-  "style": "dist/reset.min.css",
-  "files": [
-    "dist",
-    "src"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ComfortCSS/reset.git"
-  },
-  "scripts": {
-    "build": "npx lightningcss --minify --bundle src/index.css -o dist/reset.min.css",
-    "prepare": "npm run build",
-    "prepublishOnly": "npm run build"
-  },
-  "keywords": [
-    "css",
-    "reset",
-    "normalize",
-    "modern",
-    "accessible",
-    "lightweight"
-  ],
-  "author": "ComfortCSS",
-  "license": "MIT",
-  "devDependencies": {
-    "husky": "^9.1.7",
-    "lightningcss": "^1.32.0",
-    "lightningcss-cli": "^1.32.0",
-    "lint-staged": "^17.2.0",
-    "prettier": "^3.9.6",
-    "stylelint": "^17.14.1",
-    "stylelint-config-standard": "^40.0.0",
-    "stylelint-order": "^8.1.1",
-    "stylelint-prettier": "^5.0.3"
-  },
-  "publishConfig": {
-    "access": "public"
-  },
-  "exports": {
-    ".": {
-      "style": "./dist/reset.min.css",
-      "default": "./dist/reset.min.css"
+    "name": "@comfortcss/reset",
+    "version": "1.1.1",
+    "description": "An accessible and lightweight CSS reset for web development.",
+    "main": "dist/reset.min.css",
+    "style": "dist/reset.min.css",
+    "files": [
+        "dist",
+        "src"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ComfortCSS/reset.git"
     },
-    "./reset": {
-      "style": "./dist/reset.min.css",
-      "default": "./dist/reset.min.css"
+    "lint-staged": {
+        "*.{css,json,md,js,yml}": [
+            "prettier --write"
+        ],
+        "*.css": [
+            "stylelint --fix"
+        ]
     },
-    "./modules/*": "./src/*",
-    "./package.json": "./package.json"
-  },
-  "allowScripts": {
-    "lightningcss-cli@1.32.0": true
-  }
+    "scripts": {
+        "build": "lightningcss --minify --bundle --browserslist src/index.css -o dist/index.min.css",
+        "prepare": "husky",
+        "prepublishOnly": "npm run build",
+        "format": "prettier --write .",
+        "lint:css": "stylelint \"src/**/*.css\"",
+        "lint:css:fix": "stylelint --fix \"src/**/*.css\"",
+        "lint": "npm run lint:css",
+        "lint:fix": "npm run lint:css:fix",
+        "check": "npm run lint && npm run format -- --check"
+    },
+    "keywords": [
+        "css",
+        "reset",
+        "normalize",
+        "modern",
+        "accessible",
+        "lightweight"
+    ],
+    "author": "ComfortCSS",
+    "license": "MIT",
+    "devDependencies": {
+        "husky": "^9.1.7",
+        "lightningcss": "^1.33.0",
+        "lightningcss-cli": "^1.33.0",
+        "lint-staged": "^17.2.0",
+        "prettier": "^3.9.6",
+        "stylelint": "^17.14.1",
+        "stylelint-config-standard": "^40.0.0",
+        "stylelint-order": "^8.1.1",
+        "stylelint-prettier": "^5.0.3"
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "exports": {
+        ".": {
+            "style": "./dist/reset.min.css",
+            "default": "./dist/reset.min.css"
+        },
+        "./reset": {
+            "style": "./dist/reset.min.css",
+            "default": "./dist/reset.min.css"
+        },
+        "./modules/*": "./src/*",
+        "./package.json": "./package.json"
+    },
+    "allowScripts": {
+        "lightningcss-cli@1.33.0": true
+    }
 }

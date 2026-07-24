@@ -1,0 +1,54 @@
+# EditorConfig is awesome: https://editorconfig.org
+
+root = true
+
+# Global settings for all files
+[*]
+charset = utf-8
+end_of_line = lf
+indent_style = space
+indent_size = 2
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# CSS, SCSS, Less
+[*.{css,scss,less}]
+indent_size = 2
+max_line_length = 100
+
+# JavaScript / TypeScript (future-proof)
+[*.{js,jsx,ts,tsx,mjs,cjs}]
+indent_size = 2
+max_line_length = 100
+quote_type = single
+
+# JSON files (Prettier handles formatting)
+[*.{json,json5,jsonc}]
+indent_size = 2
+max_line_length = 0
+
+# YAML (e.g., GitHub Actions)
+[*.{yml,yaml}]
+indent_size = 2
+max_line_length = 120
+
+# Markdown (preserve trailing spaces for line breaks)
+[*.md]
+trim_trailing_whitespace = false
+indent_size = 2
+max_line_length = 80
+
+# GitHub Actions workflows (YAML)
+[.github/**/*.yml]
+indent_size = 2
+max_line_length = 120
+
+# Dotfiles with no extension (.gitignore, .browserslistrc, etc.)
+[*.{gitignore,browserslistrc}]
+indent_size = 2
+trim_trailing_whitespace = true
+
+# Shell scripts
+[*.{sh,bash}]
+indent_size = 2
+end_of_line = lf
