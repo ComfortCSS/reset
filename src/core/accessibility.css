@@ -14,7 +14,7 @@
  * @see https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-contrast
  * @see https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#system_colors
  */
- @layer reset {
+@layer reset {
     /**
      * Reduced motion.
      *
@@ -29,18 +29,19 @@
         *::after {
             animation-duration: 0.01ms !important;
             animation-iteration-count: 1 !important;
-            transition-duration: 0.01ms !important;
             scroll-behavior: auto !important;
+            transition-duration: 0.01ms !important;
         }
     }
 
-    @media (prefers-contrast: high) {
+    @media (prefers-contrast: more) {
         body {
             background-color: Canvas;
             color: CanvasText;
         }
+
         * {
-            border-color: currentColor !important;
+            border-color: currentcolor !important;
         }
     }
 
@@ -49,7 +50,6 @@
             background-image: none !important;
         }
     }
-
 
     /**
      * System color custom properties.
@@ -62,18 +62,20 @@
      * @see https://developer.mozilla.org/en-US/docs/Web/CSS/@property
      */
     @property --color-canvas {
-        syntax: '<color>';
         inherits: true;
         initial-value: Canvas;
-    }
-    @property --color-canvas-text {
         syntax: '<color>';
+    }
+
+    @property --color-canvas-text {
         inherits: true;
         initial-value: CanvasText;
-    }
-    @property --color-highlight {
         syntax: '<color>';
+    }
+
+    @property --color-highlight {
         inherits: true;
         initial-value: Highlight;
+        syntax: '<color>';
     }
 }

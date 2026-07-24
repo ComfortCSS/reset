@@ -15,26 +15,29 @@ Alternatively, download the files manually from the repository.
 ## Usage
 
 At the very beginning of the CSS file:
+
 ```css
 @import '~@comfortcss/reset';
 ```
+
 For example, just the basic reset and forms:
+
 ```css
-@import "~@comfortcss/reset/reset";
-@import "~@comfortcss/reset/modules/core/base.css";
+@import '~@comfortcss/reset/reset';
+@import '~@comfortcss/reset/modules/core/base.css';
 ```
 
 ## Modules
 
-| Module | Description |
-|--------|-------------|
-|base|Box model, html, body, system colors|
-|typography|Headings, paragraphs, lists, quotes, code, hr|
-|forms|All input fields, buttons, select elements, and textareas|
-|tables|Tables, cells, captions|
-|media|Images, videos, iframes, SVG, audio|
-|interactive|Links, focus, hidden, disabled, contenteditable|
-|accessibility|prefers-reduced-motion, system @property|
+| Module        | Description                                               |
+| ------------- | --------------------------------------------------------- |
+| base          | Box model, html, body, system colors                      |
+| typography    | Headings, paragraphs, lists, quotes, code, hr             |
+| forms         | All input fields, buttons, select elements, and textareas |
+| tables        | Tables, cells, captions                                   |
+| media         | Images, videos, iframes, SVG, audio                       |
+| interactive   | Links, focus, hidden, disabled, contenteditable           |
+| accessibility | prefers-reduced-motion, system @property                  |
 
 ## License
 

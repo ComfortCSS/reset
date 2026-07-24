@@ -20,11 +20,15 @@
      * - Inherit color from parent to avoid default blue.
      * - Remove underline by default; it can be re‑added for hover/active.
      */
-    a, a:link, a:visited {
+    a,
+    a:link,
+    a:visited {
         color: inherit;
         text-decoration: none;
     }
+
     /* Hover and active are left for project-specific styling */
+
     /* a:hover, a:active { } */
 
     /**
@@ -40,6 +44,7 @@
     :focus:not(:focus-visible) {
         outline: none;
     }
+
     :focus-visible {
         outline: 2px solid Highlight;
         outline-offset: 2px;
@@ -47,7 +52,7 @@
 
     @supports not (outline-color: Highlight) {
         :focus-visible {
-            outline-color: currentColor;
+            outline-color: currentcolor;
         }
     }
 
