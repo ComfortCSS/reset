@@ -22,7 +22,7 @@
     },
     "scripts": {
         "build": "lightningcss --minify --bundle --browserslist src/index.css -o dist/index.min.css",
-        "prepare": "husky install && npm run build",
+        "prepare": "husky",
         "prepublishOnly": "npm run build",
         "format": "prettier --write .",
         "lint:css": "stylelint \"src/**/*.css\"",
