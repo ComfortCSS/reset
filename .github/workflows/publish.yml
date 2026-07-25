@@ -33,7 +33,7 @@ jobs:
               if: github.event_name == 'release'
               run: |
                   PACKAGE_VERSION=$(node -p "require('./package.json').version")
-                  RELEASE_TAG=${github.event.release.tag_name#v}
+                  RELEASE_TAG=${github.event.release.tag_name}
                   if [ "$PACKAGE_VERSION" != "$RELEASE_TAG" ]; then
                     echo "❌ Package version ($PACKAGE_VERSION) does not match release tag ($RELEASE_TAG)"
                     exit 1
