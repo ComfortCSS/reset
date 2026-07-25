@@ -1,11 +1,9 @@
-# Publish to npm when a release is published or manually triggered.
-# Also verifies version consistency, runs linters, builds the package, and publishes with provenance.
 name: Publish to npm
 
 on:
     release:
-        types: [published] # triggers when a GitHub Release is published
-    workflow_dispatch: # allows manual trigger from Actions tab
+        types: [published]
+    workflow_dispatch:
 
 jobs:
     publish:
@@ -13,7 +11,7 @@ jobs:
         runs-on: ubuntu-latest
         permissions:
             contents: read
-            id-token: write # required for npm provenance
+            id-token: write
 
         steps:
             - name: Checkout repository
@@ -33,12 +31,11 @@ jobs:
               if: github.event_name == 'release'
               run: |
                   PACKAGE_VERSION=$(node -p "require('./package.json').version")
-                  RELEASE_TAG=${github.event.release.tag_name}
-                  if [ "$PACKAGE_VERSION" != "$RELEASE_TAG" ]; then
-                    echo "❌ Package version ($PACKAGE_VERSION) does not match release tag ($RELEASE_TAG)"
+                  if [ "$PACKAGE_VERSION" != "$GITHUB_REF_NAME" ]; then
+                    echo "❌ Package version ($PACKAGE_VERSION) does not match release tag ($GITHUB_REF_NAME)"
                     exit 1
                   fi
-                  echo "✅ Package version $PACKAGE_VERSION matches release tag $RELEASE_TAG"
+                  echo "✅ Package version $PACKAGE_VERSION matches release tag $GITHUB_REF_NAME"
 
             - name: Run Stylelint (CSS linting)
               run: npm run lint
