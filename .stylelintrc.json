@@ -1,0 +1,12 @@
+{
+    "extends": ["stylelint-config-standard", "stylelint-prettier/recommended"],
+    "plugins": ["stylelint-order"],
+    "rules": {
+        "order/properties-alphabetical-order": true,
+        "declaration-block-no-redundant-longhand-properties": true,
+        "no-descending-specificity": null,
+        "selector-class-pattern": null,
+        "value-keyword-case": ["lower", { "ignoreProperties": ["/^--/"] }]
+    },
+    "ignoreFiles": ["dist/**/*.css"]
+}
