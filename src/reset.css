@@ -12,11 +12,11 @@
  */
 
 /* Import all core modules */
-@import 'core/base.css';
-@import 'core/typography.css';
-@import 'core/forms.css';
-@import 'core/tables.css';
-@import 'core/media.css';
-@import 'core/interactive.css';
-@import 'core/accessibility.css';
-@import 'core/elements.css';
+@import url('core/base.css');
+@import url('core/typography.css');
+@import url('core/forms.css');
+@import url('core/tables.css');
+@import url('core/media.css');
+@import url('core/interactive.css');
+@import url('core/accessibility.css');
+@import url('core/elements.css');

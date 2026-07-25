@@ -32,8 +32,6 @@
     fieldset,
     legend {
         appearance: none;
-        appearance: none;
-        appearance: none;
         background: none;
         border: none;
         border-radius: 0;
@@ -55,8 +53,6 @@
     input[type='radio'],
     input[type='range'],
     input[type='color'] {
-        /* stylelint-disable-next-line declaration-property-value-no-unknown */
-        appearance: auto;
         appearance: auto;
         height: auto;
         margin: 0.25rem;
@@ -67,9 +63,6 @@
      * Range input – horizontal slider.
      */
     input[type='range'] {
-        /* stylelint-disable-next-line declaration-property-value-no-unknown */
-        appearance: slider-horizontal;
-        appearance: auto;
         background: transparent;
     }
 
@@ -77,9 +70,6 @@
      * Color picker.
      */
     input[type='color'] {
-        /* stylelint-disable-next-line declaration-property-value-no-unknown */
-        appearance: color-well;
-        appearance: auto;
         border: none;
         height: 2rem;
         padding: 0;
@@ -132,8 +122,6 @@
      * - The arrow can be re-added via `background-image` if needed.
      */
     select {
-        appearance: none;
-        appearance: none;
         appearance: none;
     }
 

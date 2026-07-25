@@ -64,7 +64,6 @@
      */
     progress {
         appearance: none;
-        appearance: none;
         background: transparent;
         border: none;
         height: 1em;
@@ -90,7 +89,6 @@
      * - Ensures `legend` is displayed as a block element.
      */
     meter {
-        appearance: none;
         appearance: none;
         background: transparent;
         border: none;

@@ -9,4 +9,4 @@
  *   Users can either import this file directly or import individual modules.
  */
 
-@import 'reset.css';
+@import url('reset.css');

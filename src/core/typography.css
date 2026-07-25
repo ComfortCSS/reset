@@ -99,9 +99,9 @@
     }
 
     pre {
+        overflow-wrap: break-word;
         overflow-x: auto;
         white-space: pre-wrap;
-        overflow-wrap: break-word;
     }
 
     /**
